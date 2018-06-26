@@ -14,7 +14,7 @@ app.get('/', function(req, res){
     // res.send('./index.html');
     // res.sendFile('./index.html'); // Error: TypeError: path must be absolute or specify root to res.sendFile
     // res.sendFile(__dirname + '/index.html'); // On Windows you will have problems
-    res.sendFile(path.join(__dirname, '/index.html')); 
+    res.sendFile(path.join(__dirname, 'index.html')); 
 
 })
 
