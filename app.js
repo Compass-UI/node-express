@@ -5,11 +5,15 @@ var morgan = require('morgan');
 
 var app = express();
 
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
+app.use(morgan('tiny'));
 
 app.get('/', function(req, res){
     // res.send('Hello from express');
-    res.send('./index.html');
+    // res.send('./index.html');
+    // res.sendFile('./index.html'); // Error: TypeError: path must be absolute or specify root to res.sendFile
+    res.sendFile(__dirname + '/index.html');
+
 })
 
 app.listen(3000, function(){
