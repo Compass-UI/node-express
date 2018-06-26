@@ -9,9 +9,12 @@ var app = express();
 // app.use(morgan('combined'));
 app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, '/public/')));
+app.use('/css/', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css/')));
+app.use('/js/', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/js')));
+app.use('/js/', express.static(path.join(__dirname, '/node_modules/jquery/dist/')));
 
 app.get('/', function(req, res){
-    // res.send('Hello from express');
+    // res.send('Hello from express');  
     // res.send('./index.html');
     // res.sendFile('./index.html'); // Error: TypeError: path must be absolute or specify root to res.sendFile
     // res.sendFile(__dirname + '/index.html'); // On Windows you will have problems
